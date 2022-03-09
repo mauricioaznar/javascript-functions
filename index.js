@@ -1,39 +1,14 @@
-function sum(a, b) {
-  if (typeof a !== "number" || typeof b !== "number") {
-    return null
-  }
+const functions = require('./functions/is-word')
 
-  return a + b
-}
-
-
-function sortAsc(arr) {
-
-  if (!Array.isArray(arr)) {
-    return null
-  }
-
-  return arr.sort()
-}
-
-function sortDesc(arr) {
-  if (!Array.isArray(arr)) {
-    return null
-  }
-  return arr.sort((a, b) => {
-    if (a > b) {
-      return -1
-    } else if (a < b) {
-      return 1
-    } else {
-      return 0
-    }
+function isWords (str) {
+  const trimmedStr = str.trim()
+  const words = trimmedStr.split(" ")
+  return words.every((val) => {
+    return functions.isWord(val)
   })
 }
 
 
 module.exports = {
-  sum,
-  sortAsc,
-  sortDesc
+  isWords
 }
