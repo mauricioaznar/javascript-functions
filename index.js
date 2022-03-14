@@ -8,6 +8,14 @@ function isWords (str) {
   })
 }
 
+//Regular expressions
+
+const str = 'strIngi'
+const regex = /i/gi
+
+console.log(Array.from(str.matchAll(regex)))
+
+
 
 module.exports = {
   isWords

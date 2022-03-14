@@ -11,7 +11,6 @@ function countWordInSentence(sentence, word) {
       }
     }
   }
-
   return count
 }
 
