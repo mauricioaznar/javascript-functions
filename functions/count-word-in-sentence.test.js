@@ -12,6 +12,10 @@ it(`returns 4 for the sentence: 'abcabcabcabc' and word: 'abc'`, () => {
   expect(functions.countWordInSentence('abcabcabcabc', 'abc')).toBe(4)
 })
 
+it(`returns 4 for the sentence: 'abc abc abc abc' and word: 'abc'`, () => {
+  expect(functions.countWordInSentence('abc abc abc abc', 'abc')).toBe(4)
+})
+
 it(`returns null for the sentence: 'abcabcabcabc' and word: ''`, () => {
   expect(functions.countWordInSentence('abcabcabcabc', '')).toBe(null)
 })
