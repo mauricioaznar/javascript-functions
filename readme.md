@@ -17,3 +17,7 @@
 * add
 
 `git add .`
+
+* status
+
+`git status`
