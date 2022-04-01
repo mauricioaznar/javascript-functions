@@ -18,8 +18,3 @@
 
 `git add .`
 
-* status
-
-`git status`
-
-
