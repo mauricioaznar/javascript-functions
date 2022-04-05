@@ -43,8 +43,7 @@
 
 `git add .`
 
-
-* command line
+## command line
 
 * list directories and files
 
