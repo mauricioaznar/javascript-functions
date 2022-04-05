@@ -14,6 +14,19 @@ function isPalindrome(str) {
     return wordBackwards.toString() === str.split('').toString()
 }
 
+// function isPalindrome (str) {
+//   if (str.length % 2 === 1) {
+//     const part1 = str.slice(0, Math.floor(str.length / 2))
+//     const part2 = str.slice(Math.floor(str.length / 2) + 1, str.length)
+//     return part1 === part2.split("").reverse().join("")
+//   } else {
+//     const part1 = str.slice(0, Math.floor(str.length / 2))
+//     const part2 = str.slice(Math.floor(str.length / 2), str.length)
+//
+//     return part1 === part2.split("").reverse().join("")
+//   }
+// }
+
 module.exports = {
     isPalindrome
 }
