@@ -1,5 +1,5 @@
 
 
-console.log(["a", "b", "c"].join(""))
+console.log((new Date('2020-02-02')))
 
 
