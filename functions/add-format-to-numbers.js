@@ -1,5 +1,5 @@
-function formateo(numero){
-    const arrNumber = numero.toString().split("")
+function formatNumber(number){
+    const arrNumber = number.toString().split("")
     const l1 = arrNumber.length
     let rest = l1
     for (let i = 0; i < Math.floor(l1/3);i++){
@@ -10,13 +10,8 @@ function formateo(numero){
         arrNumber.shift()
     }
     return arrNumber.join("")
-
 }
 
-const numero = 401561567575757
-
-console.log(formateo(numero))
-// const fruits = ["Banana", "Orange", "Apple", "Mango"];
-//
-// fruits.splice(2, 0, "Lemon", "Kiwi");
-// console.log(fruits)
+module.exports = {
+    formatNumber
+}
