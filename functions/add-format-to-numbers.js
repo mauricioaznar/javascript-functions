@@ -12,6 +12,19 @@ function formatNumber(number){
     return arrNumber.join("")
 }
 
+function formatDecimals (number,decimalToBeDisplayed){
+    let numToArray = number.toString().split("")
+    if(numToArray.indexOf(".")<0){
+        numToArray = 0
+        return Number(numToArray)
+    }else {
+        numToArray = numToArray.slice(numToArray.indexOf("."), numToArray.length)
+        numToArray = Math.round(Number(numToArray.join("")) * Math.pow(10, decimalToBeDisplayed)) / Math.pow(10, decimalToBeDisplayed)
+        return numToArray
+    }
+}
+
 module.exports = {
-    formatNumber
+    formatNumber,
+    formatDecimals
 }
