@@ -1,4 +1,4 @@
-function formatNumber(number){
+function formatInteger(number){
     const arrNumber = number.toString().split("")
     const l1 = arrNumber.length
     let rest = l1
@@ -17,14 +17,27 @@ function formatDecimals (number,decimalToBeDisplayed){
     if(numToArray.indexOf(".")<0){
         numToArray = 0
         return Number(numToArray)
-    }else {
+    } else {
         numToArray = numToArray.slice(numToArray.indexOf("."), numToArray.length)
         numToArray = Math.round(Number(numToArray.join("")) * Math.pow(10, decimalToBeDisplayed)) / Math.pow(10, decimalToBeDisplayed)
         return numToArray
     }
 }
 
+function formatNumber(num) {
+    const numString = num.toString()
+    if (numString.includes('.')) {
+        const parts = numString.split('.')
+        const integerPart = parts[0]
+        const decimalsPart = parts[1]
+    } else {
+        return formatInteger(numString)
+    }
+
+}
+
+
 module.exports = {
-    formatNumber,
-    formatDecimals
+    formatInteger,
+    formatDecimals,
 }
