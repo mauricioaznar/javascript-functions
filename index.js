@@ -1,4 +1,4 @@
-const{ formatDecimals } = require('./functions/add-format-to-numbers')
+const{ formatDecimals, formatNumber } = require('./functions/add-format-to-numbers')
 
 
 
@@ -7,5 +7,7 @@ const{ formatDecimals } = require('./functions/add-format-to-numbers')
 // let number = Math.round(Number(numToArray.join("")))
 // number = Math.round(number)/100
 
-console.log('formatDecimals', formatDecimals(33.427, 2))
+console.log('formatDecimals', formatDecimals(33.999, 2))
+
+console.log(formatNumber(6146.89,2))
 

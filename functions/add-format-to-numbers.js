@@ -9,7 +9,7 @@ function formatInteger(number){
     if(arrNumber.indexOf(",")===0){
         arrNumber.shift()
     }
-    return arrNumber.join("")
+    return arrNumber
 }
 
 function formatDecimals (number,decimalToBeDisplayed){
@@ -24,14 +24,23 @@ function formatDecimals (number,decimalToBeDisplayed){
     }
 }
 
-function formatNumber(num) {
-    const numString = num.toString()
-    if (numString.includes('.')) {
-        const parts = numString.split('.')
-        const integerPart = parts[0]
-        const decimalsPart = parts[1]
+function formatNumber(num,decimalsToBeDisplayed) {
+    const numString = num.toString().split("")
+    if (numString.indexOf('.')>=0) {
+        let decimalPart = numString.slice(numString.indexOf("."),numString.length)
+        let integerPart = Number(numString.slice(0,numString.indexOf(".")).join(""))
+        decimalPart = Number(decimalPart.join(""))
+        decimalPart = formatDecimals(decimalPart,decimalsToBeDisplayed)
+        if (decimalPart === 1){
+            integerPart = integerPart + decimalPart
+             return formatInteger(integerPart).join("")
+        }else{
+            decimalPart = decimalPart.toString().split("")
+            decimalPart = decimalPart.slice(decimalPart.indexOf("."),decimalPart.length)
+            return formatInteger(integerPart).concat(decimalPart).join("")
+        }
     } else {
-        return formatInteger(numString)
+        return formatInteger(num).join("")
     }
 
 }
@@ -40,4 +49,5 @@ function formatNumber(num) {
 module.exports = {
     formatInteger,
     formatDecimals,
+    formatNumber
 }
